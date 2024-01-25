@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@rimuru/core": ["libs/core/src"],
+      "@rimuru/core/*": ["libs/core/src/*"],
+      "@rimuru/react": ["libs/react/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

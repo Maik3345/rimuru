@@ -1,0 +1,75 @@
+{
+  "name": "react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/react/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/react",
+        "packageJson": "libs/react/package.json",
+        "tsConfig": "libs/react/tsconfig.lib.json",
+        "project": "libs/react/package.json",
+        "entryFile": "libs/react/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "updateBuildableProjectDepsInPackageJson": false,
+        "assets": [
+          {
+            "glob": "libs/react/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "babelUpwardRootMode": true
+      }
+    },
+    "build-with-types": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-src"],
+      "options": {
+        "command": "tsc --emitDeclarationOnly --declaration --project libs/react/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/react/**/*.ts", "libs/react/package.json"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/react/jest.config.ts"
+      }
+    },
+    "version-and-release": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "commitMessageFormat": "chore({projectName}): release version ${version}",
+        "tagPrefix": "@sebgroup/green-{projectName}@",
+        "push": true,
+        "postTargets": ["react:publish", "react:github"]
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "distFolderPath": "{workspaceRoot}/dist/libs/react"
+      }
+    }
+  },
+  "tags": []
+}
