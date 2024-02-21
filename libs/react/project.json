@@ -26,13 +26,6 @@
         "babelUpwardRootMode": true
       }
     },
-    "build-with-types": {
-      "executor": "nx:run-commands",
-      "dependsOn": ["build-src"],
-      "options": {
-        "command": "tsc --emitDeclarationOnly --declaration --project libs/react/tsconfig.lib.json"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
@@ -61,13 +54,6 @@
       "options": {
         "tag": "${tag}",
         "notes": "${notes}"
-      }
-    },
-    "publish": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public",
-        "distFolderPath": "{workspaceRoot}/dist/libs/react"
       }
     }
   },

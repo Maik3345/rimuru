@@ -1,5 +1,13 @@
 {
   "extends": "../../tsconfig.base.json",
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ],
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",
@@ -14,7 +22,6 @@
     "inlineSources": true,
     "declaration": true,
     "incremental": true,
-
     "allowJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -23,5 +30,5 @@
     "baseUrl": "."
   },
   "files": [],
-  "include": ["**/*.ts"]
+  "include": []
 }

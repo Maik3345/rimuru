@@ -11,6 +11,28 @@
         "command": "nx run core:build-with-types"
       }
     },
+    "build-src": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "format": ["esm", "cjs"],
+      "platform": "browser",
+      "options": {
+        "packageJson": "libs/core/package.json",
+        "outputPath": "dist/libs/core/src",
+        "main": "libs/core/src/index.ts",
+        "additionalEntryPoints": ["libs/core/src/lit-styleguide.ts"],
+        "tsConfig": "libs/core/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "updateBuildableProjectDepsInPackageJson": false,
+        "esbuildConfig": "libs/core/esbuild.config.cjs"
+      }
+    },
     "build-with-types": {
       "executor": "nx:run-commands",
       "dependsOn": ["build-src"],

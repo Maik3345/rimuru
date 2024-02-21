@@ -1,16 +1,22 @@
 {
-  "name": "@rimuru/core",
-  "version": "0.0.1",
+  "name": "@rimurugroup/core",
+  "version": "0.0.2",
   "description": "Web Components core library",
   "license": "MIT",
   "author": "lit-styleguide",
   "type": "commonjs",
   "exports": {
-    ".": "./dist/src/index.js",
-    "./lit-styleguide.js": "./dist/src/lit-styleguide.js"
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./lit-styleguide.js": {
+      "types": "./lit-styleguide.d.ts",
+      "default": "./lit-styleguide.js"
+    }
   },
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "module": "index.js",
+  "main": "index.js",
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
@@ -87,6 +93,11 @@
     "prettier": "^2.4.1",
     "tslib": "^2.3.1",
     "typescript": "^4.5.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "../../dist/libs/core/src",
+    "registry": "https://registry.npmjs.org/"
   },
   "customElements": "custom-elements.json"
 }

@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rimuru/core": ["libs/core/src"],
-      "@rimuru/core/*": ["libs/core/src/*"],
-      "@rimuru/react": ["libs/react/src/index.ts"]
+      "@rimurugroup/core": ["libs/core/src"],
+      "@rimurugroup/core/*": ["libs/core/src/*"],
+      "@rimurugroup/react": ["libs/react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,9 +1,9 @@
 import { createComponent } from '@lit/react';
 import * as React from 'react';
-import { LitStyleguide } from '@rimuru/core/lit-styleguide.js';
+import { LitStyleguide } from '@rimurugroup/core/lit-styleguide.js';
 
 export const LitStyleguideComponent = createComponent({
   tagName: 'lit-styleguide',
-  elementClass: LitStyleguide,
+  elementClass: LitStyleguide as any,
   react: React,
 });
