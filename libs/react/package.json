@@ -1,6 +1,6 @@
 {
   "name": "@rimurugroup/react",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "private": false,
   "description": "Web Components React",
   "license": "ISC",
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.2",
-    "@rimurugroup/core": "^0.0.1",
+    "@rimurugroup/core": "^0.0.3",
     "lit": "^2.0.2",
     "react": "18.2.0"
   },

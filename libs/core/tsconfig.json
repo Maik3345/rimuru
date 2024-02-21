@@ -1,5 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": [],
   "references": [
     {
       "path": "./tsconfig.lib.json"
@@ -9,26 +11,13 @@
     }
   ],
   "compilerOptions": {
-    "target": "es2018",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmitOnError": true,
-    "lib": ["es2017", "dom"],
-    "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "importHelpers": false,
-    "sourceMap": true,
-    "inlineSources": true,
-    "declaration": true,
-    "incremental": true,
-    "allowJs": true,
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "target": "es2022",
     "baseUrl": "."
-  },
-  "files": [],
-  "include": []
+  }
 }
