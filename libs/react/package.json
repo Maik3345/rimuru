@@ -5,7 +5,6 @@
   "description": "Web Components React",
   "license": "ISC",
   "author": "lit-styleguide",
-  "type": "commonjs",
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",

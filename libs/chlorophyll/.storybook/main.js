@@ -3,13 +3,8 @@ const rootMain = require('../../../.storybook/main');
 module.exports = {
   ...rootMain,
 
-  core: { ...rootMain.core, builder: 'webpack5' },
   stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: [
-    '@storybook/addon-essentials',
-    ...rootMain.addons,
-    '@nx/react/plugins/storybook',
-  ],
+  addons: ['@storybook/addon-essentials', ...rootMain.addons],
   webpackFinal: async (config, { configType }) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js
     if (rootMain.webpackFinal) {
@@ -19,9 +14,5 @@ module.exports = {
     // add your own webpack tweaks if needed
 
     return config;
-  },
-  typescript: {
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {},
   },
 };

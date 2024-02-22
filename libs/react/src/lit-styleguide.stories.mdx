@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LitStyleguideComponent } from './lit-styleguide';
+
+export const Template = ({ ...props }) => <LitStyleguideComponent {...props} />;
+
+<Meta
+  title="Components/LitStyleguideComponent"
+  component={LitStyleguideComponent}
+/>
+
+# LitStyleguideComponent
+
+Simple Badge Component
+
+<Story
+  name="LitStyleguideComponent"
+  parameters={{
+    componentIds: ['component-lit-styleguide'],
+  }}
+  args={{
+    header: 'test header',
+    count: 0,
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+#
+
+### Types
+
+Badges are available in a number of different variants. Please note that the colors used in the examples below are not final yet.
+
+<Canvas>
+  <div className="lit-styleguide-container">
+    <LitStyleguideComponent header="test header"></LitStyleguideComponent>
+  </div>
+</Canvas>
