@@ -89,6 +89,10 @@
         ]
       }
     },
+    "update-dependencies": {
+      "executor": "@rimurugroup/repo-tools:update-lib-deps",
+      "options": {}
+    },
     "version-and-release": {
       "executor": "@jscutlery/semver:version",
       "options": {

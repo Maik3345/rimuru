@@ -1502,9 +1502,9 @@
     "@types/sinon-chai" "^3.2.3"
     chai-a11y-axe "^1.5.0"
 
-"@rimurugroup/core@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rimurugroup/core/-/core-0.0.3.tgz#5ef94f80b8eab20290e246592446fdcdc9aa8c4e"
+"@rimurugroup/core@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@rimurugroup/core/-/core-0.0.4.tgz#5ef94f80b8eab20290e246592446fdcdc9aa8c4e"
   integrity sha512-6IuL89X72WJVk5kXCE38nyIQu3KWKyte1nH87ZRzbM97Zx/PkU478ce9RnIXwdJ87Ghybh3C+kp7JzoIs62nhQ==
   dependencies:
     "@lit/react" "^1.0.2"

@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.2",
-    "@rimurugroup/core": "^0.0.3"
+    "@rimurugroup/core": "^0.0.4"
   },
   "devDependencies": {},
   "peerDependencies": {

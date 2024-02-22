@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
-import { LitStyleguide } from '../src/lit-styleguide.js';
+import { LitStyleguide } from '../src/lit-styleguide/lit-styleguide.js';
 
 window.customElements.define('lit-styleguide', LitStyleguide);
 

@@ -1,1 +1,1 @@
-export * from './lit-styleguide.js';
+export * from './lit-styleguide/lit-styleguide.js';

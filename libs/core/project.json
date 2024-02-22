@@ -20,7 +20,9 @@
         "packageJson": "libs/core/package.json",
         "outputPath": "dist/libs/core/src",
         "main": "libs/core/src/index.ts",
-        "additionalEntryPoints": ["libs/core/src/lit-styleguide.ts"],
+        "additionalEntryPoints": [
+          "libs/core/src/lit-styleguide/lit-styleguide.ts"
+        ],
         "tsConfig": "libs/core/tsconfig.lib.json",
         "assets": [
           {
@@ -54,28 +56,41 @@
         "jestConfig": "libs/core/jest.config.ts"
       }
     },
-    "version-and-release": {
-      "executor": "@jscutlery/semver:version",
+    "storybook": {
+      "dependsOn": ["build"],
+      "executor": "@nrwl/storybook:storybook",
       "options": {
-        "commitMessageFormat": "chore({projectName}): release version ${version}",
-        "tagPrefix": "@rimurugroup/{projectName}@",
-        "push": true,
-        "postTargets": ["react:publish", "react:github"]
+        "port": 4400,
+        "configDir": "libs/core/.storybook",
+        "uiFramework": "@storybook/web-components"
+      },
+      "inputs": ["core"],
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
       }
     },
-    "github": {
-      "executor": "@jscutlery/semver:github",
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "inputs": ["core"],
+      "dependsOn": ["build-src"],
       "options": {
-        "tag": "${tag}",
-        "notes": "${notes}"
+        "outputDir": "dist/storybook/core",
+        "configDir": "libs/core/.storybook",
+        "uiFramework": "@storybook/web-components"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        },
+        "parallel": false
       }
     },
-    "publish": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public",
-        "distFolderPath": "{workspaceRoot}/dist/libs/react/src"
-      }
+    "update-dependencies": {
+      "executor": "@sebgroup/repo-tools:update-lib-deps",
+      "options": {}
     }
   },
   "tags": []
