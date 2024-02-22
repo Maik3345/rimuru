@@ -1,6 +1,19 @@
 $primary: #007bff;
 $white: #fff;
 
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
 .button.primary {
   background-color: $primary;
   color: $white;

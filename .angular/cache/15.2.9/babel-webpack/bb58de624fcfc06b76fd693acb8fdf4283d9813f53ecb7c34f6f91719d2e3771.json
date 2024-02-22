@@ -1,0 +1,1 @@
+{"ast":null,"code":"import '@storybook/angular';","map":{"version":3,"mappings":"AAAA,OAAO,oBAAoB","names":[],"sources":["/Users/michael.restrepo/code/personal/web-components/rimuru/storybook-init-framework-entry.js"],"sourcesContent":["import '@storybook/angular';"]},"metadata":{},"sourceType":"module","externalDependencies":[]}
