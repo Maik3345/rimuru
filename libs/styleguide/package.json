@@ -1,0 +1,22 @@
+{
+  "name": "@rimurugroup/styleguide",
+  "version": "0.0.1",
+  "description": "A CSS framework for SEB with accessibility at it's core.",
+  "main": "css/styleguide.min.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maik3345/rimuru.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public",
+    "directory": "../../dist/libs/styleguide"
+  },
+  "author": "",
+  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/Maik3345/rimuru/issues"
+  },
+  "homepage": "",
+  "dependencies": {}
+}

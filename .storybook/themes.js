@@ -1,17 +1,17 @@
-import { create } from '@storybook/theming'
+import { create } from '@storybook/theming';
 
 const common = {
   appBorderRadius: 3,
   brandImage: 'brandimage.svg',
-  brandTitle: 'Green',
-  brandUrl: 'https://github.com/sebgroup/green',
+  brandTitle: 'Rimuru',
+  brandUrl: 'https://github.com/Maik3345/rimuru',
   fontBase: '"SEBSansSerif", sans-serif, "Helvetica Neue", Helvetica, Arial',
   fontCode: 'monospace',
   gridCellSize: 10,
   inputBorderRadius: 7,
   colorPrimary: '#60CD18',
   colorSecondary: '#41B0EE',
-}
+};
 
 export const light = create({
   ...common,
@@ -28,7 +28,7 @@ export const light = create({
   inputTextColor: '#333',
   textColor: '#333',
   textMutedColor: '#333',
-})
+});
 
 export const dark = create({
   ...common,
@@ -45,4 +45,4 @@ export const dark = create({
   // inputTextColor: 'rgb(41, 41, 41)',
   textColor: '#dedede',
   // textMutedColor: 'rgb(52, 52, 52)',*/
-})
+});

@@ -14,21 +14,20 @@
     "@rimurugroup/core": "^0.0.3",
     "tslib": "^2.3.1"
   },
-  "description": "Angular components built on top of @sebgroup/chlorophyll.",
+  "description": "Angular components",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebgroup/green.git"
+    "url": "git+https://github.com/Maik3345/rimuru"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public",
     "directory": "../../dist/libs/angular"
   },
-  "author": "SEB Open Source <opensource@seb.se> (https://github.com/sebgroup)",
+  "author": "",
   "contributors": [],
-  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/sebgroup/green/labels/angular"
+    "url": "https://github.com/Maik3345/rimuru/labels/angular"
   },
-  "homepage": "https://sebgroup.github.io/green/latest/angular/"
+  "homepage": ""
 }

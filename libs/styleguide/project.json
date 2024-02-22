@@ -1,15 +1,14 @@
 {
-  "name": "chlorophyll",
+  "name": "styleguide",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/chlorophyll/src",
+  "sourceRoot": "libs/styleguide/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "./tools/executors/scss:build-lib",
-      "dependsOn": ["copy-fonts"],
       "options": {
-        "packageJson": "libs/chlorophyll/package.json",
-        "outputPath": "dist/libs/chlorophyll"
+        "packageJson": "libs/styleguide/package.json",
+        "outputPath": "dist/libs/styleguide"
       }
     },
     "compile-scss": {
@@ -18,32 +17,32 @@
         "commands": [
           {
             "description": "compile scss",
-            "command": "npx sass --no-source-map --load-path=node_modules/ libs/chlorophyll/scss/index.scss dist/libs/chlorophyll/css/green-chlorophyll.css"
+            "command": "npx sass --no-source-map --load-path=node_modules/ libs/styleguide/scss/index.scss dist/libs/styleguide/css/styleguide.css"
           },
           {
             "description": "auto prefix compiled css overwrite file and output maps",
-            "command": "npx postcss dist/libs/chlorophyll/css/green-chlorophyll.css --use=autoprefixer -m -r"
+            "command": "npx postcss dist/libs/styleguide/css/styleguide.css --use=autoprefixer -m -r"
           },
           {
             "description": "minify compiled and auto prefixed css and output maps",
-            "command": "npx postcss dist/libs/chlorophyll/css/green-chlorophyll.css --use=cssnano -m -o=dist/libs/chlorophyll/css/green-chlorophyll.min.css"
+            "command": "npx postcss dist/libs/styleguide/css/styleguide.css --use=cssnano -m -o=dist/libs/styleguide/css/styleguide.min.css"
           }
         ],
         "parallel": false
       },
-      "outputs": ["{workspaceRoot}/dist/libs/chlorophyll"]
+      "outputs": ["{workspaceRoot}/dist/libs/styleguide"]
     },
     "lint": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npx stylelint libs/chlorophyll/**/*.scss"
+        "command": "npx stylelint libs/styleguide/**/*.scss"
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/chlorophyll"],
+      "outputs": ["{workspaceRoot}/coverage/libs/styleguide"],
       "options": {
-        "jestConfig": "libs/chlorophyll/jest.config.ts",
+        "jestConfig": "libs/styleguide/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -53,7 +52,7 @@
         "uiFramework": "@storybook/html",
         "port": 4000,
         "host": "0.0.0.0",
-        "configDir": "libs/chlorophyll/.storybook"
+        "configDir": "libs/styleguide/.storybook"
       },
       "configurations": {
         "ci": {
@@ -64,11 +63,10 @@
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
       "outputs": ["{options.outputDir}"],
-      "dependsOn": ["copy-fonts"],
       "options": {
         "uiFramework": "@storybook/html",
-        "configDir": "libs/chlorophyll/.storybook",
-        "outputDir": "dist/storybook/chlorophyll"
+        "configDir": "libs/styleguide/.storybook",
+        "outputDir": "dist/storybook/styleguide"
       },
       "configurations": {
         "ci": {
@@ -77,7 +75,7 @@
       }
     },
     "update-dependencies": {
-      "executor": "@sebgroup/repo-tools:update-lib-deps",
+      "executor": "@rimurugroup/repo-tools:update-lib-deps",
       "options": {}
     }
   }

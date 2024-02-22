@@ -17,7 +17,9 @@
     "paths": {
       "@rimurugroup/core": ["libs/core/src"],
       "@rimurugroup/core/*": ["libs/core/src/*"],
-      "@rimurugroup/react": ["libs/react/src/index.ts"]
+      "@rimurugroup/react": ["libs/react/src/index.ts"],
+      "@rimurugroup/angular": ["libs/angular/src/index.ts"],
+      "@rimurugroup/repo-tools": ["libs/repo-tools/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
